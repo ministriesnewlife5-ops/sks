@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const linkCols: { title: string; links: { label: string; href: string }[] }[] = [
   {
@@ -62,8 +63,8 @@ export default function Footer() {
           {/* Elite Brand Section */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
             <Link href="#home" className="flex items-center gap-4 cursor-pointer group" aria-label="Go to home">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FDFCF0] text-[#0A2351] font-serif text-lg font-bold shadow-md transition-transform group-hover:scale-105">
-                SK
+              <span className="relative h-12 w-12 overflow-hidden rounded-full bg-[#FDFCF0] shadow-md ring-1 ring-black/10 transition-transform group-hover:scale-105">
+                <Image src="/logo.png" alt="Sri Krishna Sweets" fill sizes="48px" className="object-contain p-2" />
               </span>
               <span className="flex flex-col leading-tight">
                 <span className="text-xl font-serif font-bold tracking-tight text-[#FDFCF0]">Sri Krishna</span>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -11,8 +12,8 @@ export default function NavBar() {
         
         {/* Elite Logo Section */}
         <div className="flex items-center gap-4 cursor-pointer group">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0A2351] text-[#FDFCF0] font-serif text-lg font-bold shadow-md transition-transform group-hover:scale-105">
-            SK
+          <div className="relative h-11 w-11 overflow-hidden rounded-full bg-white shadow-md ring-1 ring-black/5 transition-transform group-hover:scale-105">
+            <Image src="/logo.png" alt="Sri Krishna Sweets" fill sizes="44px" className="object-contain p-1.5" priority />
           </div>
           <div className="flex flex-col leading-none">
             <span className="text-xl font-serif font-bold tracking-tight text-[#0A2351]">
