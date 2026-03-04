@@ -211,22 +211,35 @@ export default function GiftBuilder() {
                      <span className="text-[10px] font-bold text-[#B8860B]">{selected.length}/{layout || 0} Filled</span>
                   </div>
 
-                  <div 
-                    className="grid gap-3" 
-                    style={{ gridTemplateColumns: `repeat(${gridSpec.cols}, minmax(0, 1fr))` }}
-                  >
-                    {Array.from({ length: layout || 4 }).map((_, i) => (
-                      <div key={i} className="aspect-square rounded-lg border border-white/10 bg-white/5 flex items-center justify-center p-2 text-center overflow-hidden">
-                        {selected[i] ? (
-                          <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} className="text-[8px] font-serif italic leading-tight">
-                            {selected[i].name}
-                          </motion.span>
-                        ) : (
-                          <div className="h-1 w-1 bg-white/20 rounded-full" />
-                        )}
+                  {layout ? (
+                    <div
+                      className="grid gap-3"
+                      style={{ gridTemplateColumns: `repeat(${gridSpec.cols}, minmax(0, 1fr))` }}
+                    >
+                      {Array.from({ length: layout }).map((_, i) => (
+                        <div key={i} className="aspect-square rounded-lg border border-white/10 bg-white/5 flex items-center justify-center p-2 text-center overflow-hidden">
+                          {selected[i] ? (
+                            <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} className="text-[8px] font-serif italic leading-tight">
+                              {selected[i].name}
+                            </motion.span>
+                          ) : (
+                            <div className="h-1 w-1 bg-white/20 rounded-full" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                      <div className="text-xs font-semibold tracking-widest text-white/70 uppercase">Choose a size to preview</div>
+                      <div className="mt-3 grid grid-cols-3 gap-3">
+                        {[4, 6, 8].map((n) => (
+                          <div key={n} className="aspect-square rounded-xl border border-white/10 bg-white/5 grid place-items-center">
+                            <span className="text-[11px] font-bold text-white/70">{n}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  )}
 
                   <div className="mt-8 pt-6 border-t border-white/10 space-y-3">
                     <div className="flex justify-between text-xs opacity-60">

@@ -5,6 +5,7 @@ import SignatureProduct from "./components/SignatureProduct";
 import ShopByOccasion from "./components/ShopByOccasion";
 import GiftBuilder from "./components/GiftBuilder";
 import BestSellers from "./components/BestSellers";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <ShopByOccasion />
         <GiftBuilder />
         <BestSellers />
+        <Footer />
       </main>
     </div>
   );
