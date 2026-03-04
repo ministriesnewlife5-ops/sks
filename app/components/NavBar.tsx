@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const isMysurpa = pathname?.startsWith("/mysurpa");
+  const isSweets = pathname?.startsWith("/sweets");
 
   return (
     // Changed bg to a warm ivory (#FDFCF0) to feel more "premium/traditional"
@@ -11,7 +17,7 @@ export default function NavBar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
         
         {/* Elite Logo Section */}
-        <div className="flex items-center gap-4 cursor-pointer group">
+        <Link href="/" className="flex items-center gap-4 cursor-pointer group">
           <div className="relative h-11 w-11 overflow-hidden rounded-full bg-white shadow-md ring-1 ring-black/5 transition-transform group-hover:scale-105">
             <Image src="/logo.png" alt="Sri Krishna Sweets" fill sizes="44px" className="object-contain p-1.5" priority />
           </div>
@@ -23,19 +29,42 @@ export default function NavBar() {
               Sweets
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Traditional Navigation - Focused on Typography */}
         <nav className="hidden gap-8 text-[13px] font-semibold uppercase tracking-widest text-[#0A2351]/80 md:flex items-center">
-          <a href="#" className="relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm">
+          <Link
+            href="/"
+            className={
+              isHome
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "relative py-2 transition-colors hover:text-[#B8860B]"
+            }
+          >
             Home
-          </a>
-          {["Our Mysurpa", "All Sweets", "Gift Boxes", "Corporate", "About", "Blog", "Contact"].map((item) => (
-            <a 
-              key={item} 
-              href="#" 
-              className="transition-colors hover:text-[#B8860B]"
-            >
+          </Link>
+          <Link
+            href="/mysurpa"
+            className={
+              isMysurpa
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "transition-colors hover:text-[#B8860B]"
+            }
+          >
+            Our Mysurpa
+          </Link>
+          <Link
+            href="/sweets"
+            className={
+              isSweets
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "transition-colors hover:text-[#B8860B]"
+            }
+          >
+            All Sweets
+          </Link>
+          {["Gift Boxes", "Corporate", "About", "Blog", "Contact"].map((item) => (
+            <a key={item} href="#" className="transition-colors hover:text-[#B8860B]">
               {item}
             </a>
           ))}
@@ -71,7 +100,16 @@ export default function NavBar() {
       {open && (
         <div className="md:hidden absolute w-full bg-[#FDFCF0] border-b border-zinc-200 shadow-xl animate-in fade-in slide-in-from-top-4">
           <div className="flex flex-col p-6 gap-4 text-center font-serif text-lg text-[#0A2351]">
-            {["Home", "Our Mysurpa", "All Sweets", "Gift Boxes", "Corporate", "About", "Blog", "Contact"].map((item) => (
+            <Link href="/" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              Home
+            </Link>
+            <Link href="/mysurpa" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              Our Mysurpa
+            </Link>
+            <Link href="/sweets" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              All Sweets
+            </Link>
+            {["Gift Boxes", "Corporate", "About", "Blog", "Contact"].map((item) => (
               <a key={item} href="#" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
                 {item}
               </a>
