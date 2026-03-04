@@ -7,6 +7,14 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(20,50,100,1)_0%,rgba(10,25,49,1)_100%)]" />
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.12]"
+          style={{
+            backgroundImage:
+              "repeating-radial-gradient(circle at 12px 12px, rgba(231,197,91,0.50) 0 1px, transparent 1px 16px), repeating-radial-gradient(circle at 36px 36px, rgba(231,197,91,0.18) 0 1px, transparent 1px 22px), radial-gradient(closest-side at 20% 25%, rgba(231,197,91,0.14), transparent 60%), radial-gradient(closest-side at 85% 35%, rgba(231,197,91,0.10), transparent 55%)",
+            backgroundSize: "64px 64px, 72px 72px, 100% 100%, 100% 100%",
+          }}
+        />
       </div>
 
       {/* Reduced vertical padding: py-20 on mobile, py-28 on desktop */}
