@@ -10,6 +10,7 @@ export default function NavBar() {
   const isHome = pathname === "/";
   const isMysurpa = pathname?.startsWith("/mysurpa");
   const isSweets = pathname?.startsWith("/sweets");
+  const isGiftBoxes = pathname?.startsWith("/gift-boxes");
 
   return (
     // Changed bg to a warm ivory (#FDFCF0) to feel more "premium/traditional"
@@ -63,7 +64,17 @@ export default function NavBar() {
           >
             All Sweets
           </Link>
-          {["Gift Boxes", "Corporate", "About", "Blog", "Contact"].map((item) => (
+          <Link
+            href="/gift-boxes"
+            className={
+              isGiftBoxes
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "transition-colors hover:text-[#B8860B]"
+            }
+          >
+            Gift Boxes
+          </Link>
+          {["Corporate", "About", "Blog", "Contact"].map((item) => (
             <a key={item} href="#" className="transition-colors hover:text-[#B8860B]">
               {item}
             </a>
@@ -109,7 +120,10 @@ export default function NavBar() {
             <Link href="/sweets" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
               All Sweets
             </Link>
-            {["Gift Boxes", "Corporate", "About", "Blog", "Contact"].map((item) => (
+            <Link href="/gift-boxes" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              Gift Boxes
+            </Link>
+            {["Corporate", "About", "Blog", "Contact"].map((item) => (
               <a key={item} href="#" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
                 {item}
               </a>

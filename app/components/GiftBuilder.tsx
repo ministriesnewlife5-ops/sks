@@ -49,7 +49,7 @@ export default function GiftBuilder() {
   const total = selected.reduce((sum, s) => sum + s.price, 0);
 
   return (
-    <section className="relative bg-[#FDFCF0] py-24 overflow-hidden">
+    <section id="giftbox-builder" className="relative bg-[#FDFCF0] py-24 overflow-hidden">
       {/* Heritage Background Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 opacity-[0.03] pointer-events-none text-[#B8860B]">
         <svg viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 L100 0 L100 100 Z" /></svg>
