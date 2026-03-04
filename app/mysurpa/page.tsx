@@ -37,18 +37,20 @@ export default function MysurpaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FBF8EF] text-[#14203A]">
+    <div className="min-h-screen bg-[#FDFCF0] text-[#0A2351] selection:bg-[#B8860B] selection:text-white">
       <NavBar />
 
       {/* Top Hero Bar */}
-      <section className="bg-[#08244D]">
+      <section className="relative h-[45vh] flex items-center justify-center overflow-hidden bg-[#0A1931]">
         <div className="mx-auto max-w-7xl px-6 py-16 text-center">
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E7C55B] ring-1 ring-white/10">
-            Signature since 1948
-          </div>
-          <h1 className="mt-6 font-[ui-serif] text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
-            The Legendary <span className="italic text-[#E7C55B]">Mysurpa</span>
-          </h1>
+          <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-px w-8 bg-[#B8860B]/50" />
+              <span className="text-[10px] font-bold tracking-[0.5em] text-[#B8860B] uppercase">Signature since 1948</span>
+              <div className="h-px w-8 bg-[#B8860B]/50" />
+            </div>
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight">
+              The Legendary <span className="italic text-[#B8860B]">Mysurpa</span>
+            </h1>
         </div>
       </section>
 

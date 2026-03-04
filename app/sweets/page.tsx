@@ -142,14 +142,14 @@ export default function SweetsPage() {
       <NavBar />
 
       {/* Hero */}
-      <section className="bg-[#08244D]">
+      <section className="relative h-[45vh] flex items-center justify-center overflow-hidden bg-[#0A1931]">
         <div className="mx-auto max-w-7xl px-6 py-14 text-center">
-          <h1 className="font-[ui-serif] text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Our <span className="italic text-[#E7C55B]">Sweets</span>
-          </h1>
-          <p className="mx-auto mt-3 max-w-xl text-xs tracking-wide text-white/70">
-            Handcrafted with love, tradition, and pure ghee since 1948.
-          </p>
+          <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight">
+              Our <span className="italic text-[#B8860B]">Sweets</span>
+            </h1>
+          <p className="mt-4 font-serif italic text-zinc-300 max-w-lg mx-auto">
+              "Handcrafted with love, tradition, and pure ghee since 1948."
+            </p>
         </div>
       </section>
 

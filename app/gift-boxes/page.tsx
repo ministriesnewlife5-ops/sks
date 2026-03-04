@@ -40,16 +40,7 @@ export default function GiftBoxesPage() {
       <section className="relative h-[45vh] flex items-center justify-center overflow-hidden bg-[#0A1931]">
         {/* Background Texture & Pattern */}
         <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
-        <motion.div 
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 2 }}
-          className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        >
-          <svg width="600" height="600" viewBox="0 0 200 200" className="text-[#B8860B]">
-            <path fill="currentColor" d="M100 0 A100 100 0 1 1 100 200 A100 100 0 1 1 100 0 M100 20 L100 180 M20 100 L180 100"/>
-          </svg>
-        </motion.div>
+        
 
         <div className="relative z-10 text-center px-6">
           <motion.div
@@ -95,15 +86,15 @@ export default function GiftBoxesPage() {
                 className="group relative"
               >
                 {/* Elite Card Container */}
-                <div className="relative overflow-hidden rounded-3xl bg-white border border-zinc-100 p-8 transition-all duration-500 hover:shadow-[0_30px_60px_-20px_rgba(184,134,11,0.15)] group-hover:-translate-y-2">
+                <div className="relative overflow-hidden rounded-3xl bg-gray-300 border border-zinc-100 p-8 transition-all duration-500 hover:shadow-[0_30px_60px_-20px_rgba(184,134,11,0.15)] group-hover:-translate-y-2">
                   
                   {/* Internal "Silk" Background Color */}
                   <div className={`absolute top-0 left-0 w-full h-2 transition-all duration-500 group-hover:h-full opacity-10 ${box.color}`} />
 
-                  {/* Icon/Seal */}
+                  {/* Icon/Seal 
                   <div className="relative z-10 mx-auto mb-6 h-14 w-14 rounded-full border border-[#B8860B]/20 flex items-center justify-center text-[#B8860B] group-hover:bg-[#B8860B] group-hover:text-white transition-all duration-500">
                     <span className="text-xl">✨</span>
-                  </div>
+                  </div> */}
 
                   <div className="relative z-10 text-center">
                     <h3 className="font-serif text-2xl text-[#0A2351] mb-1">{box.title}</h3>
@@ -118,7 +109,7 @@ export default function GiftBoxesPage() {
                       ))}
                     </div>
 
-                    <div className="font-serif text-3xl text-[#0A2351] mb-6">₹{box.price}</div>
+                    <div className="font-sanserif text-3xl text-[#0A2351] mb-6">₹{box.price}</div>
 
                     {/* Elite Button */}
                     <button className="relative w-full overflow-hidden rounded-full bg-[#0A2351] py-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition-all duration-500">
