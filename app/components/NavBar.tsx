@@ -11,6 +11,10 @@ export default function NavBar() {
   const isMysurpa = pathname?.startsWith("/mysurpa");
   const isSweets = pathname?.startsWith("/sweets");
   const isGiftBoxes = pathname?.startsWith("/gift-boxes");
+  const isCorporate = pathname?.startsWith("/corporate");
+  const isAbout = pathname?.startsWith("/about");
+  const isBlog = pathname?.startsWith("/blog");
+  const isContact = pathname?.startsWith("/contact");
 
   return (
     // Changed bg to a warm ivory (#FDFCF0) to feel more "premium/traditional"
@@ -19,7 +23,7 @@ export default function NavBar() {
         
         {/* Elite Logo Section */}
         <Link href="/" className="flex items-center gap-4 cursor-pointer group">
-          <div className="relative h-11 w-11 overflow-hidden rounded-full bg-white shadow-md ring-1 ring-black/5 transition-transform group-hover:scale-105">
+          <div className="relative h-11 w-11 overflow-hidden  transition-transform group-hover:scale-105">
             <Image src="/logo.png" alt="Sri Krishna Sweets" fill sizes="44px" className="object-contain p-1.5" priority />
           </div>
           <div className="flex flex-col leading-none">
@@ -74,11 +78,46 @@ export default function NavBar() {
           >
             Gift Boxes
           </Link>
-          {["Corporate", "About", "Blog", "Contact"].map((item) => (
-            <a key={item} href="#" className="transition-colors hover:text-[#B8860B]">
-              {item}
-            </a>
-          ))}
+          <Link
+            href="/corporate"
+            className={
+              isCorporate
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "transition-colors hover:text-[#B8860B]"
+            }
+          >
+            Corporate
+          </Link>
+          <Link
+            href="/about"
+            className={
+              isAbout
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "transition-colors hover:text-[#B8860B]"
+            }
+          >
+            About
+          </Link>
+          <Link
+            href="/blog"
+            className={
+              isBlog
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "transition-colors hover:text-[#B8860B]"
+            }
+          >
+            Blog
+          </Link>
+          <Link
+            href="/contact"
+            className={
+              isContact
+                ? "relative py-2 text-[#0A2351] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B8860B] rounded-sm"
+                : "transition-colors hover:text-[#B8860B]"
+            }
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Action Icons - Replacing text with elegant strokes */}
@@ -123,11 +162,18 @@ export default function NavBar() {
             <Link href="/gift-boxes" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
               Gift Boxes
             </Link>
-            {["Corporate", "About", "Blog", "Contact"].map((item) => (
-              <a key={item} href="#" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
-                {item}
-              </a>
-            ))}
+            <Link href="/corporate" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              Corporate
+            </Link>
+            <Link href="/about" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              About
+            </Link>
+            <Link href="/blog" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              Blog
+            </Link>
+            <Link href="/contact" className="border-b border-zinc-100 pb-2 hover:text-[#B8860B]">
+              Contact
+            </Link>
           </div>
         </div>
       )}

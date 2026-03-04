@@ -43,11 +43,6 @@ export default function GiftBoxesPage() {
         
 
         <div className="relative z-10 text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-8 bg-[#B8860B]/50" />
               <span className="text-[10px] font-bold tracking-[0.5em] text-[#B8860B] uppercase">Premium Curation</span>
@@ -59,7 +54,6 @@ export default function GiftBoxesPage() {
             <p className="mt-4 font-serif italic text-zinc-300 max-w-lg mx-auto">
               "Every celebration deserves a hallmark of sweetness."
             </p>
-          </motion.div>
         </div>
       </section>
 
